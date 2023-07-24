@@ -24,6 +24,16 @@ const Product = () => {
           <Link to="/product/22">22</Link>
         </li>
       </ul>
+
+      <ul>
+        {PRODUCTS.map((el, id) => {
+          return (
+            <li>
+              <Link to={`/product/${el.id}`}>{el.title.toString()}</Link>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 };
