@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
 
 const Product = () => {
   const PRODUCTS = [
@@ -8,13 +8,15 @@ const Product = () => {
     { id: 333, title: "Paper towels" },
     { id: 444, title: "Dish soap" },
   ];
+  const homeNavigate = useNavigate();
+  const onClickHome = () => {
+    homeNavigate("/");
+  };
 
   return (
     <>
       <h1>Product</h1>
-      <Link to="/">
-        <button>홈으로 이동</button>
-      </Link>
+      <button onClick={onClickHome}>홈으로 이동</button>
 
       <ul>
         <li>
